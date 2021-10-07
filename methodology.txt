@@ -14,4 +14,4 @@ numbers ranging in different properties.
 3. I will examine the results and use a source from khan academy that explains how to derive time complexity from the results; a 
 graph will also be used to analyze the experiment's results.
 4. I will interpret the created graph and verify if the results differ from my hypothesis or not; whatever the results may be, I will use academic articles written by MIT professors, which explains why a time complexity changes based in certain scenarios.
-5. I will finally derive a conclusion from the 
+5. I will finally derive a conclusion given my previous findings 
