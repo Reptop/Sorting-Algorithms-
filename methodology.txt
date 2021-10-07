@@ -1,0 +1,17 @@
+A methodolog assists in probing the reasearch question itself i.e. it's an "attack plan" for answering the question itself. It 
+also helps in identifying which sources are essential for answering the question, hence, if you have no methodology, then you 
+don't know if you have the right sources that can answer the reasearch question.
+
+1. A computer science EE permites the use of analyzing already existing programs; thus, I will analyze the efficency of other 
+programmer's algorithms, as programming sorting algorithms myself would lead to the same product as using pre existing open
+source resources. 
+3. I will establish my variables before I begin to analyze the algorithm efficency, which will be the constants, Dv, and IV;
+the DV being the time it takes for the algorithm to complete, while the IV is the specific properties of the input data. The 
+constant, however, are multiple factors: the computer hardware and operating system, the specific development environment used,
+the same algorithms used, same functions being called, and same input data type, which is an "int." 
+2. Before conducting any experiments, I will make a hypothesis, afterwards, I will move forward with the experiment by using the C++ <chrono> library, I will measure the time if takes for each type of algorithms to fully sort an array of 
+numbers ranging in different properties.  
+3. I will examine the results and use a source from khan academy that explains how to derive time complexity from the results; a 
+graph will also be used to analyze the experiment's results.
+4. I will interpret the created graph and verify if the results differ from my hypothesis or not; whatever the results may be, I will use academic articles written by MIT professors, which explains why a time complexity changes based in certain scenarios.
+5. I will finally derive a conclusion from the 
