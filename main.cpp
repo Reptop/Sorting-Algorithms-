@@ -4,9 +4,9 @@ using namespace std;
 
 // A utility function to swap two elements
 void swap(int* a, int* b) {
-	int t = *a;
+	int temp = *a;
 	*a = *b;
-	*b = t;
+	*b = temp;
 }
 
 /* This function takes last element as pivot, places
@@ -133,8 +133,7 @@ void printmerge(int A[], int size) {
         cout << A[i] << " ";
 }
   
-
-int testy[10000];
+int testy[10000]; //global array; I hate using global variables man...
 
 int main() {
 ifstream file("dataset.txt");
@@ -143,12 +142,9 @@ if(file.is_open()) {
             file >> testy[i];
         }
     }
-
 int input;
 cout << "1. bubble 2. quick 3. mergesort" << endl; 
 cin >> input; 
-//int test[] = {14, 32, 25, 5, 4, 23, 43, 5, 34};
-//int length = sizeof(test)/sizeof(test[0]);  
 int len = 10000; 
 switch(input) {
   case 1:
@@ -167,12 +163,6 @@ switch(input) {
   printmerge(testy, len); 
   break; 
   }
-  if (input != 1 || input != 2 || input != 3) {
-    cout << "Invalid Input\n";
-    //cin >> input;
-  }
 
-//cout << "Invalid input" << endl;
-//main();  
 return 0; 
 } 
