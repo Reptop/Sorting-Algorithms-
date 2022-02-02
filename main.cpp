@@ -1,6 +1,10 @@
+//Extended Essay Code 
+
 #include <bits/stdc++.h>
-#include <fstream> 
+#include <fstream>
+#include <chrono>  
 using namespace std;
+using namespace std::chrono;
 
 // A utility function to swap two elements
 void swap(int* a, int* b) {
@@ -47,8 +51,7 @@ void quickSort(int arr[], int low, int high) {
 }
 
 /* Function to print an array */
-void printArray(int arr[], int size)
-{
+void printArray(int arr[], int size) {
 	int i;
 	for (i = 0; i < size; i++)
 		cout << arr[i] << " ";
@@ -67,8 +70,7 @@ void Bubble(int arr[], int size) {
 // Merges two subarrays of array[].
 // First subarray is arr[begin..mid]
 // Second subarray is arr[mid+1..end]
-void merge(int array[], int const left, int const mid, int const right)
-{
+void merge(int array[], int const left, int const mid, int const right) {
     auto const subArrayOne = mid - left + 1;
     auto const subArrayTwo = right - mid;
   
@@ -117,8 +119,7 @@ void merge(int array[], int const left, int const mid, int const right)
 // begin is for left index and end is
 // right index of the sub-array
 // of arr to be sorted */
-void mergeSort(int array[], int const begin, int const end)
-{
+void mergeSort(int array[], int const begin, int const end) {
     if (begin >= end)
         return; // Returns recursively
   
@@ -133,36 +134,52 @@ void printmerge(int A[], int size) {
         cout << A[i] << " ";
 }
   
-int testy[10000]; //global array; I hate using global variables man...
+int testy[1000000]; //global array; I hate using global variables man...
 
 int main() {
 ifstream file("dataset.txt");
 if(file.is_open()) {
-        for(int i = 0; i < 10000; ++i) {
+        for(int i = 0; i < 1000000; ++i) {
             file >> testy[i];
         }
     }
 int input;
 cout << "1. bubble 2. quick 3. mergesort" << endl; 
 cin >> input; 
-int len = 10000; 
+int len = 1000000; 
 switch(input) {
-  case 1:
+  case 1: {
+  auto start = high_resolution_clock::now();
   Bubble(testy, len);
+  auto stop = high_resolution_clock::now();
+  auto duration = duration_cast<nanoseconds>(stop - start);
+
   cout << "Sorted Array: " << endl;
   printArray(testy, len); 
+  cout << "Duration: " << duration.count() << " nanoseconds"; 
   break; 
-  case 2: 
+}
+  case 2: {
+  auto start = high_resolution_clock::now();
   quickSort(testy, 0, len-1);
+  auto stop = high_resolution_clock::now(); 
+  auto duration = duration_cast<nanoseconds>(stop - start);
   cout << "Sorted Array: " << endl;
   printArray(testy, len);
+  cout << "Duration: " << duration.count() << " nanoseconds"; 
   break;  
-  case 3: 
-  mergeSort(testy, 0, len-1); 
+}
+  case 3: {
+  auto start = high_resolution_clock::now();
+  mergeSort(testy, 0, len-1);
+  auto stop = high_resolution_clock::now(); 
+  auto duration = duration_cast<nanoseconds>(stop - start);
   cout << "Sorted Array: " << endl;
-  printmerge(testy, len); 
+  //printmerge(testy, len); 
+  cout << "Duration: " << duration.count() << " nanoseconds"; 
   break; 
-  }
+  } 
+}
 
 return 0; 
 } 
